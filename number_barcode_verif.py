@@ -5,7 +5,7 @@ def verif_lenght(bc):
         a function to verify if the given barcode have the good lenght
         
         Args:
-            bc : the number of the barcode
+            bc (int) : the number of the barcode
             
         Returns:
             return True if the barcode is the good lenght, False if it isn't 
@@ -19,7 +19,7 @@ def only_numbers(bc):
         a function to verify if the barcode is only composed of numbers
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
         
         Returns:
             return True if the number givent by the user is only composed of numbers, False if it isn't 
@@ -43,7 +43,7 @@ def add_impairs(bc):
         a function to add all numbers with impairs position in the barcode
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
         
         Returns:
             returns the result of the addition of all numbers with impairs position
@@ -67,7 +67,7 @@ def add_pairs(bc):
         a function to add all numbers with pairs position in the barcode
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
         
         Returns:
             returns the result of the addition of all numbers with pairs position
@@ -89,7 +89,7 @@ def factor_three(bc):
         a function to muliply by 3 the result of the function above add_pairs(bc)
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
             
         Returns:
             return the result of the multiplication of 3 and the result of add_pairs(bc)
@@ -103,7 +103,7 @@ def traitement(bc):
         a fucntion to add the result of add_impairs() and factor_three(), and substract the rest of the division by 10 (of the previous result) of 10
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
             
         Returns:
             return the result of this calcul
@@ -117,7 +117,7 @@ def validation_barcode(bc):
         the main function, composed of all the previous function to verify if the barcode is valid or not
         
         Args:
-            bc : the barcode
+            bc (int) : the barcode
         
         Returns:
             Return True if the barcode is valid, False if it isn't
