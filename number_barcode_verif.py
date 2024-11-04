@@ -8,7 +8,7 @@ def verif_lenght(bc):
             bc (int) : the number of the barcode
             
         Returns:
-            return True if the barcode is the good lenght, False if it isn't 
+            bool : return True if the barcode is the good lenght, False if it isn't 
     """
     
     return len(str(bc)) == 13 # return True if bc == 13 and False if it's not
@@ -22,7 +22,7 @@ def only_numbers(bc):
             bc (int) : the barcode
         
         Returns:
-            return True if the number givent by the user is only composed of numbers, False if it isn't 
+            bool : return True if the number givent by the user is only composed of numbers, False if it isn't 
     """
     
     numbers = "1234567890" ; return all(char in numbers for char in str(bc)) #initialize all the numbers in variable numbers and verify if there is only numbers
@@ -46,7 +46,7 @@ def add_impairs(bc):
             bc (int) : the barcode
         
         Returns:
-            returns the result of the addition of all numbers with impairs position
+            int : returns the result of the addition of all numbers with impairs position
     """
     
     res = 0 ; return sum(int(str(bc)[i]) for i in range(0, len(str(bc))-1, 2)) # initialize a result as 0, create the sum of all numbers with impairs positions with a loop
@@ -70,7 +70,7 @@ def add_pairs(bc):
             bc (int) : the barcode
         
         Returns:
-            returns the result of the addition of all numbers with pairs position
+            int : returns the result of the addition of all numbers with pairs position
     """
     
     res = 0 ; return sum(int(str(bc)[i]) for i in range(1, len(str(bc))-1, 2))
@@ -92,7 +92,7 @@ def factor_three(bc):
             bc (int) : the barcode
             
         Returns:
-            return the result of the multiplication of 3 and the result of add_pairs(bc)
+            int : return the result of the multiplication of 3 and the result of add_pairs(bc)
     """
     
     return add_pairs(bc) * 3 # return the result of add_impairs() factor 3
@@ -106,7 +106,7 @@ def traitement(bc):
             bc (int) : the barcode
             
         Returns:
-            return the result of this calcul
+            int : return the result of this calcul
     """
     
     return 10 - ((add_impairs(bc) + factor_three(bc)) % 10) # make the sum of the result of add_impairs() and factor_three(), take the rest of the division by 10, substract the rest to 10
@@ -120,7 +120,7 @@ def validation_barcode(bc):
             bc (int) : the barcode
         
         Returns:
-            Return True if the barcode is valid, False if it isn't
+            bool : Return True if the barcode is valid, False if it isn't
     """
     
     if only_numbers(bc): # if the barcode contains only numbers continue
