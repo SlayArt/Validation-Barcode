@@ -56,7 +56,7 @@ def add_impairs(bc):
 
 def add_impairs(bc):
     res = 0 # initialize a result as 0 
-    for i in range(0, len(bc)-1, 2): # create a loop to check all char with impairs position
+    for i in range(0, len(str(bc))-1, 2): # create a loop to check all char with impairs position
         res += bc[i] # add to result all numbers with impairs position 
     return res # return final result
 """
@@ -78,7 +78,7 @@ def add_pairs(bc):
 """
 def add_impairs(bc):
     res = 0
-    for i in range(1, len(bc)-1, 2):
+    for i in range(1, len(str(bc))-1, 2):
         res += bc[i]
     return res
 """
